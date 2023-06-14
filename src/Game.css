@@ -1,3 +1,67 @@
+.app-container {
+   width: 800px;
+   height: 800px;
+   position: absolute;
+   left: 50%;
+   top: 10%;
+   margin-left: -400px;
+   background-color: teal;
+}
+
+.panel {
+   position: absolute;
+   background-color: lightgoldenrodyellow;
+   border: 8px solid sandybrown;
+   -webkit-box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+   box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+   z-index: 1;
+}
+
+.header {
+   left: 50%;
+   top: 70px;
+   height: 80px;
+   width: 300px;
+   margin-left: -132.5px;
+}
+
+.header-text {
+   font-size: 30px;
+   font-weight: bold;
+   width: 200px;
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   text-align: center;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+.footer {
+   left: 50%;
+   top: 730px;
+   height: 80px;
+   width: 300px;
+   margin-left: -132.5px;
+   
+}
+
+.footer button {
+   position: relative;
+   left: 50%;
+   top: 20%;
+   margin-left: -125px;
+   width: 250px;
+   height: 50px;
+   background-color: lightblue;
+   font-size: 30px;
+   -webkit-box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9);
+   box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9);
+   border: 5px solid chocolate;
+   font-weight: bold;
+} 
+
 .gameBoard {
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -8,19 +72,30 @@
     left:50%;
     margin-left:-250px;
     top:20%;
+    background-color: chocolate;
+    border: 8px solid sandybrown;
+    border-radius: 8%;
+    -webkit-box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+    box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+
 }
 
 .gameCircle {
     width:100px;
     height:100px; 
     margin:10px; 
-    border-radius: 50%
+    border-radius: 50%;
+    border: 5px solid black;
  }
  
- .odd {
+ .player_0 {
+    background-color: white;
+ }
+
+ .player_1 {
     background-color: red;
  }
 
- .even {
-    background-color: blue;
- }
+ .player_2 {
+   background-color: blue;
+}
