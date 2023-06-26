@@ -44,23 +44,27 @@
    height: 80px;
    width: 300px;
    margin-left: -132.5px;
-   
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
 }
 
 .footer button {
    position: relative;
    left: 50%;
    top: 20%;
-   margin-left: -125px;
-   width: 250px;
+   width: 145px;
    height: 50px;
    background-color: lightblue;
-   font-size: 30px;
+   font-size: 20px;
    -webkit-box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9);
    box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9);
    border: 5px solid chocolate;
    font-weight: bold;
 } 
+
+.footer button:hover {
+   background-color: lightgreen;
+}
 
 .gameBoard {
     display:grid;

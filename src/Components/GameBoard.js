@@ -3,12 +3,12 @@ import GameCircle from "./GameCircle";
 import '../Game.css';
 import Header from "./Header";
 import Footer from "./Footer";
-import { isWinner, isDraw } from "./helper";
+import { isWinner, isDraw, getComputerMove } from "./helper";
 import { GAME_STATE_IDLE, GAME_STATE_WIN,GAME_STATE_PLAYING, NO_CIRCLES, NO_PLAYER, PLAYER_1, PLAYER_2, GAME_STATE_DRAW } from "../Constants";
 
 
 const GameBoard = () => {
-    const [gameBoard, setGameBoard] = useState(Array(16).fill(NO_PLAYER));
+    const [gameBoard, setGameBoard] = useState(Array(NO_CIRCLES).fill(NO_PLAYER));
     const [currentPlayer, setCurrentPlayer] = useState(PLAYER_1);
     const [gameState, setGameState] = useState(GAME_STATE_IDLE);
     const [winPlayer, setWinner] = useState(NO_PLAYER);
@@ -22,10 +22,9 @@ const GameBoard = () => {
 
 
     const initGame = () => {
-        setGameBoard(Array(16).fill(NO_PLAYER));
+        setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
         setCurrentPlayer(PLAYER_1);
         setGameState(GAME_STATE_PLAYING);
-        setWinner(NO_PLAYER);
     }
 
     const initBoard = () => {
@@ -34,6 +33,10 @@ const GameBoard = () => {
             circles.push(renderCircle(i));
         }
         return circles;
+    }
+
+    const suggestmove = () => {
+        circleClicked(getComputerMove(gameBoard));
     }
     
     const circleClicked = (id) => {
@@ -75,7 +78,7 @@ const GameBoard = () => {
             <div className="gameBoard" >
             {initBoard()}
             </div>
-            <Footer onClickEvent={initGame} />
+            <Footer onNewGameClick={initGame} OnSuggestClick={suggestmove} gameState={gameState} />
         </>
     )
 }
